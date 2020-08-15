@@ -12,16 +12,18 @@ pool:
 variables:
   buildConfiguration: 'Release'
 
-#steps:
+steps:
 #- script: dotnet build --configuration $(buildConfiguration)
 #  displayName: 'dotnet build $(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
+  displayName: 'restore'
   inputs:
     command: 'restore'
     feedsToUse: 'select'
 
 - task: DotNetCoreCLI@2
+  displayName: 'Test run'
   inputs:
     command: test
     projects: '**/*NUnitTestProject2/*.csproj'
