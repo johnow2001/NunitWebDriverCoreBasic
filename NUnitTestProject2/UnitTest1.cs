@@ -45,7 +45,7 @@ namespace NUnitTestProject2
         [TestCase("https://www.bbc.co.uk/", ExpectedResult = "https://www.bbc.co.uk/")]
         public string VisitDifferentSites(string url)
         {
-            driver.Navigate().GoToUrl(url);
+            driver.Navigate().GoToUrl(url + "dd");
             string visitedUrl = driver.Url;
             Assert.AreEqual(url, visitedUrl);
             return visitedUrl;
