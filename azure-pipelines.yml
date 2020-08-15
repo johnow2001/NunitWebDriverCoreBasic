@@ -18,11 +18,12 @@ steps:
 
 - task: DotNetCoreCLI@2
   inputs:
+    command: 'restore'
+    feedsToUse: 'select'
+
+- task: DotNetCoreCLI@2
+  inputs:
     command: test
     projects: '**/*NUnitTestProject2/*.csproj'
     arguments: '--configuration $(buildConfiguration)'
 
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'restore'
-    feedsToUse: 'select'
