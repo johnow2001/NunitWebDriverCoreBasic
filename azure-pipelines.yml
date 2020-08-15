@@ -17,10 +17,11 @@ steps:
 #  displayName: 'dotnet build $(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
-  displayName: 'restore'
+  displayName: 'Build Process'
   inputs:
-    command: 'restore'
-    feedsToUse: 'select'
+    command: 'build'
+    projects: '**/*.csproj'
+    arguments: '--configuration $(buildConfiguration)'
 
 - task: DotNetCoreCLI@2
   displayName: 'Test run'
