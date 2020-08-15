@@ -14,7 +14,8 @@ namespace NUnitTestProject2
         [SetUp]
         public void Setup()
         {
-            driver = new ChromeDriver(Environment.GetEnvironmentVariable("ChromeWebDriver"));
+            //string s = Environment.GetEnvironmentVariable("ChromeWebDriver");
+            driver = new ChromeDriver();
         }
 
         [Test]
